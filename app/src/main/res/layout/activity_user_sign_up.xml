@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".view.main.MainActivity">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/top_image"
+                android:layout_width="match_parent"
+                android:layout_height="324dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/login_page_image" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="50dp"
+                    android:background="@drawable/light_black_rounded_bg"
+                    android:orientation="horizontal"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="6dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="6dp">
+
+                    <TextView
+                        android:id="@+id/changeLanguage"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/translate_icon"
+                        android:backgroundTint="#A89FA0"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/skip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="@drawable/light_black_rounded_bg"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="6dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="6dp"
+                    android:text="Skip"
+                    android:textColor="#A89FA0" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/top_image">
+
+                <LinearLayout
+                    android:id="@+id/liner_layout__text_view1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/text1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="26dp"
+                        android:fontFamily="@font/metropolis_bold"
+                        android:text="India's #1 Food Delivery"
+                        android:textColor="@color/black"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/metropolis_bold"
+                        android:text="and Dining App"
+                        android:textColor="@color/black"
+                        android:textSize="24sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/divider_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/liner_layout__text_view1"
+                    android:layout_marginTop="28dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="22dp"
+                    android:paddingEnd="22dp">
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="12dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/metropolis_medium"
+                        android:gravity="center_horizontal"
+                        android:text="Log in or sign up"
+                        android:textColor="#646464"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/divider_view"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp">
+
+
+                    <LinearLayout
+                        android:id="@+id/phone_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:orientation="horizontal"
+
+                        >
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/select_country_card"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardElevation="1dp"
+                            app:cardCornerRadius="8dp">
+
+                            <com.hbb20.CountryCodePicker
+                                android:id="@+id/country_picker"
+                                android:layout_width="wrap_content"
+                                android:layout_height="48dp"
+                                android:gravity="center_vertical"
+                                android:paddingStart="6dp"
+                                android:paddingTop="4dp"
+                                android:paddingBottom="4dp"
+                                app:ccp_autoDetectCountry="true"
+                                app:ccp_defaultNameCode="IND"
+                                app:ccp_rippleEnable="false"
+                                app:ccp_showFlag="true"
+                                app:ccp_showFullName="false"
+                                app:ccp_showNameCode="false"
+                                app:ccp_showPhoneCode="false" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            app:cardElevation="1dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="8dp">
+
+                            <LinearLayout
+                                android:id="@+id/edit_text_box_layout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/country_code"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="12dp"
+                                    android:fontFamily="@font/metropolis_medium"
+                                    android:gravity="center_horizontal"
+                                    android:text="+91"
+                                    android:textColor="@color/black"
+                                    android:textSize="15sp" />
+
+                                <EditText
+                                    android:id="@+id/userNumber"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="48dp"
+                                    android:background="@null"
+                                    android:fontFamily="@font/metropolis_medium"
+                                    android:hint="Enter Phone Number"
+                                    android:inputType="number"
+                                    android:maxLength="10"
+                                    android:paddingStart="8dp"
+                                    android:textColor="@color/black"
+                                    android:textSize="15sp" />
+
+                            </LinearLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+
+                    </LinearLayout>
+
+
+                        <Button
+                            android:id="@+id/continue_button"
+                            style="@style/Widget.MaterialComponents.Button"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/phone_layout"
+                            android:layout_marginTop="16dp"
+                            android:background="@drawable/red_btn_bg"
+                            android:fontFamily="@font/metropolis_medium"
+                            android:text="Continue"
+                            android:textAllCaps="false"
+                            android:textSize="16sp"
+                            app:backgroundTint="#F04F5F" />
+
+
+                    <LinearLayout
+                        android:id="@+id/divider_view2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/continue_button"
+                        android:layout_marginTop="24dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.divider.MaterialDivider
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="12dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/metropolis_medium"
+                            android:gravity="center_horizontal"
+                            android:text="or"
+                            android:textColor="#646464"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.divider.MaterialDivider
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="12dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/liner_layout_login_via"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@id/bottom_text1"
+                        android:layout_below="@id/divider_view2"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/google_login"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="12dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="40dp">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:padding="8dp"
+                                android:src="@drawable/google_icon" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/more_login_option"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="12dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="40dp">
+
+                            <ImageView
+                                android:layout_width="34dp"
+                                android:layout_height="34dp"
+                                android:layout_gravity="center"
+                                android:background="@drawable/three_dots_icon"
+                                android:backgroundTint="#474747" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/bottom_text1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@id/bottom_layout"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="@font/metropolis_medium"
+                        android:text="By continuing, you agree to our"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+                    <RelativeLayout
+                        android:id="@+id/bottom_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="36dp">
+
+
+                        <TextView
+                            android:id="@+id/bottom_text2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/metropolis_medium"
+                            android:text="Terms of Services\n..............................."
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+
+                        <TextView
+                            android:id="@+id/bottom_text3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_toRightOf="@id/bottom_text2"
+                            android:fontFamily="@font/metropolis_medium"
+                            android:text="Privacy Policy\n........................."
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/bottom_text4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_toRightOf="@id/bottom_text3"
+                            android:fontFamily="@font/metropolis_medium"
+                            android:text="Content policy\n.........................."
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</RelativeLayout>

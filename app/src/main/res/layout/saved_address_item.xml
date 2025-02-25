@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/address_card"
+        android:layout_marginStart="12dp"
+        app:cardElevation="1dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        app:cardCornerRadius="12dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginBottom="6dp"
+            android:layout_marginTop="8dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/orderDeliversToText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginBottom="2dp"
+                android:visibility="gone"
+                android:fontFamily="@font/metropolis_medium"
+                android:textColor="#3F51B5"
+                android:layout_marginTop="6dp"
+                android:text="DELIVERS TO"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_below="@id/orderDeliversToText"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/location_icon"
+                    android:layout_marginStart="14dp"
+
+                    android:layout_marginTop="4dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:background="@drawable/home_icon"
+                        android:backgroundTint="@color/black"
+                        android:scaleType="fitXY" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0\nkm"
+                        android:textSize="12sp"
+                        android:visibility="gone"
+                        android:layout_gravity="center_horizontal"
+                        android:fontFamily="@font/metropolis_medium"
+                        android:textAlignment="center"/>
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:id="@+id/text_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_toEndOf="@id/location_icon"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/PlaceName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/metropolis_medium"
+                        android:text="Home"
+                        android:layout_marginTop="6dp"
+                        android:textColor="#2D3241"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="54dp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/metropolis_medium"
+                        android:maxLines="2"
+                        android:lineSpacingExtra="5dp"
+                        android:text="B 89, Block B, Ashok Nagar Extension,New Ashok Nagar"
+                        android:textColor="#68686F"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/receiverNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/metropolis_medium"
+                        android:text="Phone number: +91-8979116063"
+                        android:layout_marginTop="6dp"
+                        android:textColor="#2D3241"
+                        android:textSize="12sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/share_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text_layout"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_toEndOf="@id/location_icon"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/menu_icon"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="4dp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="60dp">
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center"
+                            android:scaleType="fitXY"
+                            android:backgroundTint="@color/colorPrimary"
+                            android:background="@drawable/three_dots_icon" />
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/share_icon"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="14dp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="60dp">
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center"
+                            android:scaleType="fitXY"
+                            android:backgroundTint="@color/colorPrimary"
+                            android:background="@drawable/share_icon" />
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

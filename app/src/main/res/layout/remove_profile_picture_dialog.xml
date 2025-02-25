@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="24dp"
+    android:paddingBottom="20dp"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp"
+    tools:context=".utils.RequestPermissionDialog">
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:fontFamily="@font/metropolis_medium"
+        android:text="Remove picture" />
+
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/text1"
+        android:textColor="#676767"
+        android:textStyle="bold"
+        android:fontFamily="@font/metropolis_regular"
+        android:lineSpacingExtra="4dp"
+        android:text="Are you sure?"/>
+
+
+
+    <TextView
+        android:id="@+id/cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_marginTop="22dp"
+        android:layout_below="@id/text2"
+        android:layout_toStartOf="@id/remove"
+        android:layout_marginEnd="32dp"
+        android:textColor="#F16F7C"
+        android:fontFamily="@font/metropolis_medium"
+        android:text="Cancel" />
+
+    <TextView
+        android:id="@+id/remove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_marginTop="22dp"
+        android:layout_below="@id/text2"
+        android:layout_alignParentEnd="true"
+        android:textColor="#F16F7C"
+        android:fontFamily="@font/metropolis_medium"
+        android:text="Remove" />
+
+</RelativeLayout>

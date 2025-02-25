@@ -1,0 +1,848 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/nestedScrollView"
+    android:background="@color/white"
+    android:fillViewport="true"
+    tools:context=".view.main.MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <RelativeLayout
+            android:id="@+id/top_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/top_image"
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/ImageView.Corner"
+                app:srcCompat="@drawable/flash_sale_image" />
+
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/top_image"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="-10dp"
+                android:layout_marginBottom="6dp"
+                android:background="@drawable/black_box_gold_outline_bg"
+                android:elevation="4dp"
+                android:fontFamily="@font/metropolis_bold"
+                android:paddingStart="10dp"
+                android:paddingTop="3dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="3dp"
+                android:text="Dishes at FLAT 50% OFF >"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="2dp">
+
+            <RelativeLayout
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="52dp">
+
+                <RelativeLayout
+                    android:id="@+id/user_location"
+                    android:layout_width="wrap_content"
+                    android:layout_marginEnd="136dp"
+                    android:layout_height="wrap_content">
+
+
+                    <ImageView
+                        android:id="@+id/location_icon"
+                        android:layout_width="36dp"
+                        android:layout_height="32dp"
+                        android:layout_centerVertical="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/location_icon" />
+
+                    <TextView
+                        android:id="@+id/user_block_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/location_icon"
+                        android:singleLine="true"
+                        android:fontFamily="@font/metropolis_bold"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@id/address"
+                        android:layout_toEndOf="@id/user_block_location"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/arrow_down_icon" />
+
+
+                    <TextView
+                        android:id="@+id/address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/user_block_location"
+                        android:layout_toEndOf="@id/location_icon"
+                        android:fontFamily="@font/metropolis_medium"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/profile_view"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="22dp"
+                    android:layout_height="wrap_content">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/join_prime_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="10dp"
+                        android:layout_toStartOf="@+id/profile"
+                        app:cardCornerRadius="66dp">
+
+                        <ImageView
+                            android:id="@+id/join_prime"
+                            android:layout_width="58dp"
+                            android:layout_height="34dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/join_prime_image" />
+
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/profile"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        app:cardBackgroundColor="#BAC6FF"
+                        app:cardCornerRadius="66dp">
+
+                        <!-- <ImageView
+                             android:layout_width="34dp"
+                             android:layout_height="34dp"
+                             android:scaleType="fitXY"
+                             android:src="@drawable/join_prime_image" />
+         -->
+
+                        <ImageView
+                            android:id="@+id/userImage"
+                            android:layout_width="match_parent"
+                            android:scaleType="centerCrop"
+                            android:layout_height="match_parent"
+                            android:textColor="@android:color/holo_blue_dark" />
+
+                        <ImageView
+                            android:id="@+id/user_first_character"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:gravity="center"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/user_icon"
+                            android:textColor="@android:color/holo_blue_dark"
+                            />
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <ImageView
+                        android:id="@+id/menu_icon"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_alignParentEnd="true"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="18dp"
+                        android:backgroundTint="@color/white"
+                        android:background="@drawable/menu_icon"
+                        android:textColor="@android:color/holo_blue_dark"
+                        />
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/toolbar"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/search_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_toStartOf="@id/vegAndNonVegMode"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="6dp"
+                    app:strokeWidth="0dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/search_icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="12dp"
+                            android:background="@drawable/baseline_search_24"
+                            android:backgroundTint="@color/colorPrimary"
+                            android:scaleType="fitXY" />
+
+
+                        <EditText
+                            android:id="@+id/search"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="50dp"
+                            android:layout_toEndOf="@id/search_icon"
+                            android:background="@null"
+                            android:gravity="center_vertical"
+                            android:hint="Search 'pizza'"
+                            android:textSize="16sp" />
+
+                        <com.google.android.material.divider.MaterialDivider
+                            android:id="@+id/divider"
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_alignEnd="@id/search"
+                            android:layout_marginStart="6dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp" />
+
+                        <RelativeLayout
+                            android:id="@+id/mic_icon"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_toEndOf="@id/divider">
+
+                            <ImageView
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_centerInParent="true"
+                                android:layout_centerVertical="true"
+                                android:background="@drawable/mic_icon"
+                                android:backgroundTint="@color/colorPrimary"
+                                android:scaleType="fitXY" />
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <LinearLayout
+                    android:id="@+id/vegAndNonVegMode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="8dp"
+                    android:visibility="visible"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:fontFamily="@font/metropolis_bold"
+                        android:text="VEG"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="-4dp"
+                        android:fontFamily="@font/metropolis_bold"
+                        android:text="MODE"
+                        android:textColor="@android:color/white"
+                        android:textSize="10sp" />
+
+                    <Switch
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="-2dp" />
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/top_image_view">
+
+
+            <LinearLayout
+                android:id="@+id/divider_view2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="12dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="12dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    app:dividerColor="#F4F4F4" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/metropolis_medium"
+                    android:gravity="center_horizontal"
+                    android:text="EXPLORE"
+                    android:textColor="#777B89"
+                    android:textSize="15sp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    app:dividerColor="#F4F4F4" />
+            </LinearLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/divider_view2"
+                android:layout_marginTop="12dp" />
+
+
+            <LinearLayout
+                android:id="@+id/divider_view3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/recyclerView"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="12dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="12dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    app:dividerColor="#F4F4F4" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/metropolis_medium"
+                    android:gravity="center_horizontal"
+                    android:text="WHAT'S ON YOUR MIND?"
+                    android:textColor="#777B89"
+                    android:textSize="15sp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    app:dividerColor="#F4F4F4" />
+            </LinearLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/divider_view3"
+                android:layout_marginTop="6dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <LinearLayout
+                android:id="@+id/divider_view5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/recyclerView2"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="12dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="12dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    app:dividerColor="#F4F4F4" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/metropolis_medium"
+                    android:gravity="center_horizontal"
+                    android:text="ALL RESTAURANTS"
+                    android:textColor="#777B89"
+                    android:textSize="15sp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    app:dividerColor="#F4F4F4" />
+
+            </LinearLayout>
+
+
+            <HorizontalScrollView
+                android:id="@+id/horizontal_chips_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:layout_below="@id/divider_view5"
+
+                android:layout_marginTop="16dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/chip_1"
+                        android:layout_width="wrap_content"
+                        app:cardCornerRadius="6dp"
+                        app:cardElevation="1dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginEnd="4dp"
+                        app:cardBackgroundColor="@color/white"
+                        android:layout_height="32dp">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:paddingTop="6dp"
+                            android:paddingBottom="6dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/icon1_chip_1"
+                                android:layout_width="14dp"
+                                android:layout_height="16dp"
+                                android:scaleType="fitXY"
+                                android:layout_marginStart="10dp"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/filter_icon"/>
+
+                            <TextView
+                                android:id="@+id/text1_chip_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="6dp"
+                                android:fontFamily="@font/metropolis_bold"
+                                android:layout_toEndOf="@id/icon1_chip_1"
+                                android:textSize="13sp"
+                                android:text="Sort"/>
+
+                            <ImageView
+                                android:id="@+id/icon2_chip_1"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="2dp"
+                                android:layout_marginEnd="6dp"
+                                android:layout_toRightOf="@id/text1_chip_1"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/drop_down_icon"/>
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Chip 2 -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/chip_2"
+                        android:layout_width="wrap_content"
+                        app:cardCornerRadius="6dp"
+                        app:cardElevation="1dp"
+                        android:layout_margin="4dp"
+                        app:cardBackgroundColor="@color/white"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:paddingTop="6dp"
+                            android:paddingBottom="6dp"
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:id="@+id/text1_chip_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:fontFamily="@font/metropolis_bold"
+                                android:textSize="13sp"
+                                android:text="Nearest"/>
+
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Chip 3 -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/chip_3"
+                        android:layout_width="wrap_content"
+                        app:cardCornerRadius="6dp"
+                        app:cardElevation="1dp"
+                        android:layout_margin="4dp"
+                        app:cardBackgroundColor="@color/white"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:paddingTop="6dp"
+                            android:paddingBottom="6dp"
+                            android:orientation="horizontal">
+
+
+
+
+                            <TextView
+                                android:id="@+id/text1_chip_3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:fontFamily="@font/metropolis_bold"
+                                android:textSize="13sp"
+                                android:text="Great Offers"/>
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Chip 4 -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/chip_4"
+                        android:layout_width="wrap_content"
+                        app:cardCornerRadius="6dp"
+                        app:cardElevation="1dp"
+                        android:layout_margin="4dp"
+                        app:cardBackgroundColor="@color/white"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:paddingTop="6dp"
+                            android:paddingBottom="6dp"
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:id="@+id/text1_chip_4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:fontFamily="@font/metropolis_bold"
+                                android:textSize="13sp"
+                                android:text="Rating 4.0+"/>
+
+
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Chip 5 -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/chip_5"
+                        android:layout_width="wrap_content"
+                        app:cardCornerRadius="6dp"
+                        app:cardElevation="1dp"
+                        android:layout_margin="4dp"
+                        app:cardBackgroundColor="@color/white"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:paddingTop="6dp"
+                            android:paddingBottom="6dp"
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:id="@+id/text1_chip_5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:fontFamily="@font/metropolis_bold"
+                                android:textSize="13sp"
+                                android:text="Pure Veg"/>
+
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Chip 6 -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/chip_6"
+                        android:layout_width="wrap_content"
+                        app:cardCornerRadius="6dp"
+                        app:cardElevation="1dp"
+                        android:layout_margin="4dp"
+                        app:cardBackgroundColor="@color/white"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:paddingTop="6dp"
+                            android:paddingBottom="6dp"
+                            android:orientation="horizontal">
+
+
+
+
+                            <TextView
+                                android:id="@+id/text1_chip_6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:fontFamily="@font/metropolis_bold"
+                                android:textSize="13sp"
+                                android:text="Gourmet"/>
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Chip 7 -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/chip_7"
+                        android:layout_width="wrap_content"
+                        app:cardCornerRadius="6dp"
+                        app:cardElevation="1dp"
+                        android:layout_margin="4dp"
+                        app:cardBackgroundColor="@color/white"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:paddingTop="6dp"
+                            android:paddingBottom="6dp"
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:id="@+id/text1_chip_7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="10dp"
+                                android:fontFamily="@font/metropolis_bold"
+                                android:textSize="13sp"
+                                android:text="Cuisines"/>
+
+                            <ImageView
+                                android:id="@+id/icon2_chip_7"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="2dp"
+                                android:layout_marginEnd="6dp"
+                                android:layout_toRightOf="@id/text1_chip_7"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/drop_down_icon"/>
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Chip 8 -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/chip_8"
+                        android:layout_width="wrap_content"
+                        app:cardCornerRadius="6dp"
+                        app:cardElevation="1dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginEnd="12dp"
+                        app:cardBackgroundColor="@color/white"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:paddingTop="6dp"
+                            android:paddingBottom="6dp"
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:id="@+id/text1_chip_8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="10dp"
+                                android:fontFamily="@font/metropolis_bold"
+                                android:textSize="13sp"
+                                android:text="Schedule"/>
+
+                            <ImageView
+                                android:id="@+id/icon2_chip_8"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="2dp"
+                                android:layout_marginEnd="6dp"
+                                android:layout_toRightOf="@id/text1_chip_8"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/drop_down_icon"/>
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+
+
+            <TextView
+                android:id="@+id/available_restaurants"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/horizontal_chips_layout"
+                android:fontFamily="@font/metropolis_regular"
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:layout_marginTop="14dp"
+                android:layout_centerHorizontal="true"
+                android:text="2295 restaurants delivering to you"
+                android:textColor="#969595" />
+
+
+            <TextView
+                android:id="@+id/features_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/available_restaurants"
+                android:fontFamily="@font/metropolis_medium"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="14dp"
+                android:layout_centerHorizontal="true"
+                android:text="FEATURED"
+                android:textColor="#969595" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/features_text"
+                    android:layout_marginTop="12dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>
+
+
+

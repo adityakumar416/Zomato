@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="14dp"
+    android:layout_marginEnd="10dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="12dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <com.denzcoskun.imageslider.ImageSlider
+            android:id="@+id/image_slider"
+            android:layout_width="wrap_content"
+            android:layout_height="256dp"
+            android:background="@drawable/bar_image1"
+            app:iss_auto_cycle="true"
+
+            app:iss_period="4000" />
+
+
+        <ImageView
+            android:id="@+id/bookmark_icon"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="22dp"
+            android:background="@drawable/bookmark_icon"
+            android:backgroundTint="@color/white"
+            android:scaleType="fitXY" />
+
+
+        <RelativeLayout
+            android:id="@+id/book_table_layout"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/image_slider"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="-100dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/bar_item_blue_bg">
+
+
+            <TextView
+                android:id="@+id/book_table"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/metropolis_medium"
+                android:text="PRE-BOOK TABLE  ----------"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/bank_benifits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/book_table"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/metropolis_bold"
+                android:text="Bank benifits + 1 more"
+                android:textColor="@color/white" />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/bar_details_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/book_table_layout"
+            android:background="@drawable/bar_item_bg">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/hotel_banner_text_bg"
+                android:backgroundTint="@color/white">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:id="@+id/restaurants_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/metropolis_bold"
+                        android:text="Noida Social"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        app:cardBackgroundColor="#1B6540"
+                        app:cardCornerRadius="6dp">
+
+                        <LinearLayout
+                            android:id="@+id/rating_layout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingLeft="6dp"
+                            android:paddingRight="4dp">
+
+                            <TextView
+                                android:id="@+id/rating_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginTop="3dp"
+                                android:layout_marginBottom="3dp"
+                                android:fontFamily="@font/metropolis_bold"
+                                android:text="4.5"
+                                android:textColor="@color/white" />
+
+                            <ImageView
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginBottom="2dp"
+                                android:background="@drawable/filled_star"
+                                android:scaleType="fitXY" />
+                        </LinearLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <RelativeLayout
+                        android:id="@+id/bar_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/restaurants_name"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="6dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/bar_address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:fontFamily="@font/metropolis_regular"
+                            android:text="DLF Mall of India, Sector 18,Noida"
+                            android:textColor="#6B6A6A"
+                            android:textSize="13sp" />
+
+
+                        <TextView
+                            android:id="@+id/bar_distance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="6dp"
+                            android:layout_marginEnd="10dp"
+                            android:fontFamily="@font/metropolis_regular"
+                            android:text="4.5 km"
+                            android:textColor="#6B6A6A"
+                            android:textSize="13sp" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/bar_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/bar_location"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="12dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/foodType1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:fontFamily="@font/metropolis_regular"
+                            android:text="North India"
+                            android:textColor="#6B6A6A"
+                            android:textSize="13sp" />
+
+                        <ImageView
+                            android:id="@+id/dot1"
+                            android:layout_width="4dp"
+                            android:layout_height="4dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="6dp"
+                            android:layout_toEndOf="@+id/foodType1"
+                            android:background="@drawable/filled_circle_icon"
+                            android:scaleType="fitXY" />
+
+
+                        <TextView
+                            android:id="@+id/foodType2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="6dp"
+                            android:layout_toEndOf="@id/dot1"
+                            android:fontFamily="@font/metropolis_regular"
+                            android:text="Chinese"
+                            android:textColor="#6B6A6A"
+                            android:textSize="13sp" />
+
+
+                        <TextView
+                            android:id="@+id/cost"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="6dp"
+                            android:layout_marginEnd="10dp"
+                            android:fontFamily="@font/metropolis_regular"
+                            android:text="₹1500 for two"
+                            android:textColor="#6B6A6A"
+                            android:textSize="13sp" />
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</com.google.android.material.card.MaterialCardView>

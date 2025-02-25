@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollview"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/blinket_card"
+                android:layout_width="match_parent"
+                android:layout_height="74dp"
+                android:visibility="gone"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="4dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/blinkit_icon"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="14dp"
+                        android:background="@drawable/cake_image"
+                        android:scaleType="fitXY" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="22dp"
+                        android:layout_toStartOf="@id/share_layout2"
+                        android:layout_toEndOf="@id/blinkit_icon"
+                        android:layout_toRightOf="@id/blinkit_icon"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/text8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/metropolis_medium"
+                            android:text="German Black Forest Cake"
+                            android:textColor="#2D3241"
+                            android:maxLines="2"
+                            android:ellipsize="end"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/share_layout2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="18dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/book_mark_icon2"
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:layout_marginStart="4dp"
+                            android:background="@drawable/circle_bg"
+                            android:padding="6dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/bookmark_icon" />
+
+
+                        <ImageView
+                            android:id="@+id/bookmark_icon2"
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:layout_marginStart="12dp"
+                            android:background="@drawable/circle_bg"
+                            android:padding="6dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/bookmark_icon" />
+
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/food_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="14dp"
+                android:layout_marginBottom="4dp"
+                app:cardCornerRadius="22dp"
+                app:cardElevation="1dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/food_image_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        app:cardCornerRadius="22dp"
+                        app:cardElevation="1dp">
+
+                        <ImageView
+                            android:id="@+id/food_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="280dp"
+
+                            android:background="@drawable/cake_image"
+                            android:scaleType="fitXY" />
+                    </androidx.cardview.widget.CardView>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/food_image_layout"
+                        android:layout_marginStart="22dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="22dp">
+
+                        <LinearLayout
+                            android:id="@+id/food_type"
+                            android:layout_width="wrap_content"
+
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/veg"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/pure_veg_icon" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/food_name_is"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/food_type"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/metropolis_medium"
+                            android:text="Manchow Soup"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:id="@+id/share_layout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/food_type"
+                            android:layout_alignParentEnd="true"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/book_mark_icon"
+                                android:layout_width="38dp"
+                                android:layout_height="38dp"
+                                android:layout_marginStart="4dp"
+                                android:background="@drawable/circle_bg"
+                                android:padding="6dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/bookmark_icon" />
+
+
+                            <ImageView
+                                android:id="@+id/bookmark_icon"
+                                android:layout_width="38dp"
+                                android:layout_height="38dp"
+                                android:layout_marginStart="12dp"
+                                android:background="@drawable/circle_bg"
+                                android:padding="6dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/share_icon" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/rateing_layout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/food_name_is"
+                            android:layout_marginTop="14dp"
+                            android:orientation="horizontal">
+
+                            <per.wsj.library.AndRatingBar
+                                android:id="@+id/food_rating"
+                                android:layout_width="wrap_content"
+                                android:layout_height="16dp"
+                                android:rating="2.5"
+                                app:starColor="#FF9800" />
+
+
+                            <TextView
+                                android:id="@+id/ratingCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:fontFamily="@font/metropolis_medium"
+                                android:text="(9)"
+                                android:textColor="@color/black" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/food_discription_is"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/rateing_layout"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginBottom="18dp"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/metropolis_medium"
+                            android:maxLines="3"
+                            android:text="Favourite indo chinese soup. Served with crispy noodles." />
+
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/food_quentity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/food_details"
+                android:layout_marginStart="14dp"
+                android:visibility="gone"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="14dp"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <LinearLayout
+                        android:id="@+id/quality_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="18dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/metropolis_medium"
+                            android:text="Quantity"
+                            android:textColor="#2D3241"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:fontFamily="@font/metropolis_medium"
+                                android:text="Required"
+                                android:textColor="#68686F"
+                                android:textSize="16sp" />
+
+                            <ImageView
+                                android:layout_width="4dp"
+                                android:layout_height="4dp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="4dp"
+                                android:background="@drawable/filled_circle_icon"
+                                android:scaleType="fitXY"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="4dp"
+                                android:fontFamily="@font/metropolis_medium"
+                                android:text="1 option available"
+                                android:textColor="#68686F"
+                                android:textSize="16sp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:id="@+id/divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/quality_layout"
+                        android:layout_marginTop="12dp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/divider"
+                        android:layout_marginBottom="2dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="18dp"
+                            android:fontFamily="@font/metropolis_bold"
+                            android:text="500 gm"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/foodPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="4dp"
+                            android:layout_toStartOf="@id/radio_btn"
+                            android:fontFamily="@font/metropolis_bold"
+                            android:text="₹499"
+                            android:textSize="17sp" />
+
+                        <RadioButton
+                            android:id="@+id/radio_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true" />
+
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/scrollview"
+        android:id="@+id/bottom_layout">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <RelativeLayout
+                android:id="@+id/counter_layout"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_weight="1.4"
+                android:background="@drawable/colorprimery_all_corner_radious_bg"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/decrement_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="12dp"
+                    android:background="@drawable/minus_icon"
+                    android:backgroundTint="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/total_food_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="1"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:id="@+id/increment_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="12dp"
+                    android:background="@drawable/add_icon"
+                    android:backgroundTint="@color/colorPrimary" />
+
+            </RelativeLayout>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/continue_button"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="12dp"
+                android:layout_toEndOf="@id/counter_layout"
+                android:layout_weight="1.6"
+                android:background="@drawable/red_btn_bg"
+                android:fontFamily="@font/metropolis_medium"
+                android:text="Continue"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:backgroundTint="#F04F5F" />
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

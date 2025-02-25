@@ -1,0 +1,59 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Zomato" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+
+
+         <item name="colorPrimary">@color/black</item>
+
+        <item name="android:windowLightStatusBar">true</item>
+
+
+
+        <!--
+                <item name="android:fitsSystemWindows">true</item>
+        -->
+
+    </style>
+
+    <style name="BaseTheme.White_StatusBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+
+
+
+
+    <style name="ImageView.Corner" parent="">
+        <item name="cornerSizeTopRight">0dp</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="cornerSizeBottomLeft">20dp</item>
+        <item name="cornerSizeBottomRight">20dp</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+
+
+    <!-- Custom style for TabLayout -->
+    <style name="CustomTabLayoutStyle" parent="Widget.MaterialComponents.TabLayout">
+        <!-- Tab Indicator -->
+        <item name="tabIndicator">@drawable/tab_indicator_top</item>
+        <item name="tabIndicatorColor">#EF0C4C</item>
+        <item name="tabIndicatorHeight">4dp</item>
+        <item name="tabSelectedTextColor">#EF0C4C</item>
+        <item name="tabTextColor">@color/black</item>
+
+        <item name="tabMode">fixed</item>
+    </style>
+
+
+
+    <style name="Theme.Zomato" parent="Base.Theme.Zomato" />
+
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+
+
+
+
+</resources>

@@ -1,0 +1,898 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    tools:context=".view.cart.RestaurantDetailsActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="2dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/back_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="14dp"
+            android:layout_centerVertical="true"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="60dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginStart="4dp"
+                android:padding="6dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/arrow_back_icon" />
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/toolbar_restaurant_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="12dp"
+            android:layout_toEndOf="@id/back_button"
+            android:fontFamily="@font/metropolis_bold"
+            android:text="The Postman Kitchen"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/search_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:layout_below="@id/toolbar"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="6dp"
+            app:strokeWidth="0dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/search_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="12dp"
+                    android:background="@drawable/baseline_search_24"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:scaleType="fitXY" />
+
+
+                <EditText
+                    android:id="@+id/search"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="50dp"
+                    android:layout_toEndOf="@id/search_icon"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="Search Food"
+                    android:textSize="16sp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/search_divider"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignEnd="@id/search"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toEndOf="@id/search_divider">
+
+                    <ImageView
+                        android:id="@+id/mic_icon"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_centerInParent="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/mic_icon"
+                        android:backgroundTint="@color/colorPrimary"
+                        android:scaleType="fitXY" />
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_marginTop="12dp"
+        android:layout_above="@id/order_item_count_layout"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_layout"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/restaurant_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="18dp"
+                    android:fontFamily="@font/metropolis_bold"
+                    android:lines="2"
+                    android:text="The Postman Kitchen"
+                    android:textColor="@color/black"
+                    android:textSize="24sp" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="12dp"
+                    app:cardBackgroundColor="#1B6540"
+                    app:cardCornerRadius="6dp">
+
+                    <LinearLayout
+                        android:id="@+id/rating_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="6dp"
+                        android:paddingRight="4dp">
+
+                        <TextView
+                            android:id="@+id/rating_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:fontFamily="@font/metropolis_bold"
+                            android:text="4.5"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginBottom="2dp"
+                            android:background="@drawable/filled_star"
+                            android:scaleType="fitXY" />
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:id="@+id/time_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/restaurant_name"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/stop_watch_icon" />
+
+                    <TextView
+                        android:id="@+id/taken_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="2dp"
+                        android:fontFamily="@font/metropolis_medium"
+                        android:text="22 mins"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="4dp"
+                        android:background="@drawable/filled_circle_icon"
+                        android:scaleType="fitXY"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/distance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="4dp"
+                        android:fontFamily="@font/metropolis_medium"
+                        android:text="2 km"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="4dp"
+                        android:background="@drawable/filled_circle_icon"
+                        android:scaleType="fitXY"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="4dp"
+                        android:fontFamily="@font/metropolis_medium"
+                        android:text="Sector 4"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_toEndOf="@id/user_block_location"
+                        android:background="@drawable/arrow_down_icon"
+                        android:backgroundTint="#2D2D2D"
+                        android:scaleType="fitXY" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/schedule_for_later_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/time_layout"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/stop_watch_icon" />
+
+                    <TextView
+                        android:id="@+id/schedule_for_later"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="2dp"
+                        android:fontFamily="@font/metropolis_medium"
+                        android:text="Schedule For Later"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_toEndOf="@id/user_block_location"
+                        android:background="@drawable/arrow_down_icon"
+                        android:backgroundTint="#2D2D2D"
+                        android:scaleType="fitXY" />
+
+
+                </LinearLayout>
+
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/schedule_for_later_layout"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginBottom="8dp"
+                    app:dividerColor="#F3F4F8" />
+
+                <LinearLayout
+                    android:id="@+id/discount_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/divider"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginBottom="14dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_gravity="center_vertical"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/percent_tag_icon" />
+
+                    <TextView
+                        android:id="@+id/discountText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="2dp"
+                        android:fontFamily="@font/metropolis_medium"
+                        android:text="30% OFF up to ₹75"
+                        android:textSize="14sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="12dp"
+                        android:gravity="end"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            android:id="@+id/offers"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="2dp"
+                            android:fontFamily="@font/metropolis_medium"
+                            android:text="3 offers"
+                            android:textSize="12sp" />
+
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:background="@drawable/arrow_down_icon"
+                            android:backgroundTint="#2D2D2D"
+                            android:scaleType="fitXY" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider2"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_below="@id/discount_layout"
+                    android:layout_marginBottom="12dp"
+                    app:dividerColor="#F3F4F8" />
+
+                <HorizontalScrollView
+                    android:id="@+id/horizontal_chips_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/divider2"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- Chip 1 - Filters -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/chip_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:layout_marginStart="12dp"
+                            android:visibility="gone"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_marginBottom="4dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="6dp"
+                            app:cardElevation="1dp">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="32dp"
+                                android:orientation="horizontal"
+                                android:paddingTop="6dp"
+                                android:paddingBottom="6dp">
+
+                                <ImageView
+                                    android:id="@+id/icon_chip_1"
+                                    android:layout_width="14dp"
+                                    android:layout_height="16dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginStart="10dp"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/filter_icon" />
+
+                                <TextView
+                                    android:id="@+id/text_chip_1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginStart="6dp"
+                                    android:layout_toEndOf="@id/icon_chip_1"
+                                    android:fontFamily="@font/metropolis_bold"
+                                    android:text="Filters"
+                                    android:textSize="13sp" />
+
+                                <ImageView
+                                    android:id="@+id/drop_down_chip_1"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginStart="2dp"
+                                    android:layout_marginEnd="6dp"
+                                    android:layout_toRightOf="@id/text_chip_1"
+                                    android:src="@drawable/drop_down_icon" />
+
+                            </RelativeLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Chip 2 - Veg -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/veg_chips"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="6dp"
+                            app:cardElevation="1dp">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="32dp"
+                                android:orientation="horizontal"
+                                android:paddingTop="6dp"
+                                android:paddingBottom="6dp">
+
+                                <ImageView
+                                    android:id="@+id/icon_chip_2"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginStart="10dp"
+                                    android:padding="2dp"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/pure_veg_icon" />
+
+                                <TextView
+                                    android:id="@+id/text_chip_2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginStart="6dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_toEndOf="@id/icon_chip_2"
+                                    android:fontFamily="@font/metropolis_bold"
+                                    android:text="Veg"
+                                    android:textSize="13sp" />
+
+                            </RelativeLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Chip 3 - Egg -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/egg_chips"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="6dp"
+                            app:cardElevation="1dp">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="32dp"
+                                android:orientation="horizontal"
+                                android:paddingTop="6dp"
+                                android:paddingBottom="6dp">
+
+                                <ImageView
+                                    android:id="@+id/icon_chip_3"
+                                    android:layout_width="13dp"
+                                    android:layout_height="16dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginStart="10dp"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/egg_icon" />
+
+                                <TextView
+                                    android:id="@+id/text_chip_3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginStart="6dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_toEndOf="@id/icon_chip_3"
+                                    android:fontFamily="@font/metropolis_bold"
+                                    android:text="Egg"
+                                    android:textSize="13sp" />
+
+                            </RelativeLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Chip 4 - Non-Veg -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/nonVeg_chips"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="6dp"
+                            app:cardElevation="1dp">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="32dp"
+                                android:orientation="horizontal"
+                                android:paddingTop="6dp"
+                                android:paddingBottom="6dp">
+
+                                <ImageView
+                                    android:id="@+id/icon_chip_4"
+                                    android:layout_width="22dp"
+                                    android:layout_height="22dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginStart="4dp"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/non_veg_icon" />
+
+                                <TextView
+                                    android:id="@+id/text_chip_4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginStart="2dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_toEndOf="@id/icon_chip_4"
+                                    android:fontFamily="@font/metropolis_bold"
+                                    android:text="Non-Veg"
+                                    android:textSize="13sp" />
+
+                            </RelativeLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Chip 5 - Bestseller -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/chip_5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            android:visibility="gone"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="6dp"
+                            app:cardElevation="1dp">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="32dp"
+                                android:orientation="horizontal"
+                                android:paddingTop="6dp"
+                                android:paddingBottom="6dp">
+
+                                <ImageView
+                                    android:id="@+id/icon_chip_5"
+                                    android:layout_width="18dp"
+                                    android:layout_height="18dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginStart="10dp"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/medal_icon" />
+
+                                <TextView
+                                    android:id="@+id/text_chip_5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginStart="4dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_toEndOf="@id/icon_chip_5"
+                                    android:fontFamily="@font/metropolis_bold"
+                                    android:text="Bestseller"
+                                    android:textSize="13sp" />
+
+                            </RelativeLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Chip 6 - Rated -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/fourPlusRatedFood"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="6dp"
+                            app:cardElevation="1dp">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="32dp"
+                                android:orientation="horizontal"
+                                android:paddingTop="6dp"
+                                android:paddingBottom="6dp">
+
+                                <ImageView
+                                    android:id="@+id/icon_chip_6"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginStart="10dp"
+                                    android:background="@drawable/star_icon"
+                                    android:backgroundTint="#FF9800"
+                                    android:scaleType="fitXY" />
+
+                                <TextView
+                                    android:id="@+id/text_chip_6"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginStart="4dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_toEndOf="@id/icon_chip_6"
+                                    android:fontFamily="@font/metropolis_bold"
+                                    android:text="Rated 4+"
+                                    android:textSize="13sp" />
+
+                            </RelativeLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Chip 7 - Spicy -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/chip_7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            android:visibility="gone"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="6dp"
+                            app:cardElevation="1dp">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="32dp"
+                                android:orientation="horizontal"
+                                android:paddingTop="6dp"
+                                android:paddingBottom="6dp">
+
+                                <ImageView
+                                    android:id="@+id/icon_chip_7"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginStart="10dp"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/red_chilli_icon" />
+
+                                <TextView
+                                    android:id="@+id/text_chip_7"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginStart="6dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_toEndOf="@id/icon_chip_7"
+                                    android:fontFamily="@font/metropolis_bold"
+                                    android:text="Spicy"
+                                    android:textSize="13sp" />
+
+                            </RelativeLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Chip 8 - Sweets -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/sweets"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="6dp"
+                            app:cardElevation="1dp">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="32dp"
+                                android:orientation="horizontal"
+                                android:paddingTop="6dp"
+                                android:paddingBottom="6dp">
+
+                                <ImageView
+                                    android:id="@+id/icon_chip_8"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginStart="10dp"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/laddu_in_plate_icon" />
+
+                                <TextView
+                                    android:id="@+id/text_chip_8"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginStart="6dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_toEndOf="@id/icon_chip_8"
+                                    android:fontFamily="@font/metropolis_bold"
+                                    android:text="Sweets"
+                                    android:textSize="13sp" />
+
+                            </RelativeLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider3"
+                    android:layout_width="match_parent"
+                    android:layout_height="6dp"
+                    android:layout_below="@id/horizontal_chips_layout"
+                    android:layout_marginTop="10dp"
+                    app:dividerColor="#F3F4F8" />
+
+
+                <RelativeLayout
+                    android:id="@+id/recommended_for_you"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/divider3"
+                    android:layout_marginTop="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:fontFamily="@font/metropolis_bold"
+                        android:text="Recommended for you"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:id="@+id/show_food"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="12dp"
+                        android:backgroundTint="#2D2D2D"
+                        android:scaleType="fitXY" />
+
+
+                </RelativeLayout>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="22dp"
+                    android:layout_below="@id/recommended_for_you"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/noFoodAvailable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_below="@id/recommended_for_you"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="22dp"
+                    android:layout_marginTop="55dp"
+                    android:text="No Food Available"/>
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider4"
+                    android:layout_width="match_parent"
+                    android:layout_height="6dp"
+                    android:layout_below="@id/recycler_view"
+                    android:layout_marginTop="14dp"
+                    app:dividerColor="#F3F4F8" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <RelativeLayout
+        android:id="@+id/order_item_count_layout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:visibility="visible"
+        android:background="@color/colorPrimary"
+        android:layout_alignParentBottom="true">
+
+
+        <nl.dionsegijn.konfetti.xml.KonfettiView
+            android:id="@+id/konfettiView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <RelativeLayout
+
+            android:id="@+id/counter_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+
+            <TextView
+                android:id="@+id/item_added_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="10 item added"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Congratulations! Your delivery is free."
+                android:layout_below="@id/item_added_count"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+
+        </RelativeLayout>
+
+
+
+
+
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

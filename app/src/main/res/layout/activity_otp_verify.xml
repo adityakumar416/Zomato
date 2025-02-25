@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".view.login.OtpVerifyActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="50dp"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp">
+
+            <ImageView
+                android:id="@+id/back_button"
+                android:layout_width="24dp"
+                android:layout_height="28dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="8dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/back_arrow_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/back_button"
+                android:fontFamily="@font/metropolis_medium"
+                android:text="OTP Verification"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/skip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="18dp"
+                android:layout_alignParentEnd="true"
+                android:fontFamily="@font/metropolis_medium"
+                android:text="Skip"
+                android:visibility="gone"
+                android:layout_centerVertical="true"
+                android:textStyle="bold"
+                android:textColor="@color/black" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/toolbar">
+
+            <LinearLayout
+                android:id="@+id/liner_layout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/metropolis_medium"
+                    android:text="We have sent a verification code to"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/mobile_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/metropolis_medium"
+                    android:text="+91-8979116063"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+
+                <com.mg.otpview.OTPView
+                    android:id="@+id/otpIs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="34dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    app:activeBackgroundColor="@color/white"
+                    app:activeStrokeColor="#000000"
+                    app:activeTextColor="@color/black"
+                    app:boxCornerRadiusBottomLeft="8dp"
+                    app:boxCornerRadiusBottomRight="8dp"
+                    app:boxCornerRadiusTopLeft="8dp"
+                    app:boxCornerRadiusTopRight="8dp"
+                    app:boxCount="6"
+                    app:boxElevation="1dp"
+                    app:boxShape="rounded"
+                    app:boxSize="46dp"
+                    app:boxSpacing="6dp"
+                    app:boxStrokeSize="1dp"
+                    app:focusBackgroundColor="@color/white"
+                    app:focusStrokeColor="#000000"
+                    app:focusTextColor="#101010"
+                    app:inactiveBackgroundColor="@color/white"
+                    app:inactiveStrokeColor="#CBCBCB"
+                    app:inputType="number"
+                    app:textColor="@color/black"
+                    tools:viewBindingIgnore="true" />
+
+                <TextView
+                    android:id="@+id/open_message_app"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/metropolis_regular"
+                    android:text="Check text message for your OTP"
+                    android:textColor="#306BEF"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:fontFamily="@font/metropolis_medium"
+                        android:text="Dont't get the OTP?"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/resend_otp_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="4dp"
+                        android:fontFamily="@font/metropolis_medium"
+                        android:text="Resend SMS in 20s"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/resend_otp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="4dp"
+                        android:fontFamily="@font/metropolis_medium"
+                        android:text="Resend SMS"
+                        android:visibility="gone"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/try_more_option"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="4dp"
+                    android:visibility="gone"
+                    android:layout_marginTop="14dp"
+                    android:fontFamily="@font/metropolis_medium"
+                    android:text="Try more options"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/back_to_login_method"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Go Back to login methods"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="74dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/metropolis_medium"
+                android:textColor="#F16F7C"/>
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:indeterminate="false"
+                android:layout_gravity="center_vertical"
+                android:indeterminateTint="@color/colorPrimary2"
+                android:layout_width="wrap_content"
+                android:visibility="gone"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="12dp"
+                android:layout_height="wrap_content" />
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

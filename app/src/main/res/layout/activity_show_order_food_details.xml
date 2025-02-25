@@ -1,0 +1,1101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="#F5F6FB">
+
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="4dp"
+            android:layout_height="56dp">
+
+            <ImageView
+                android:id="@+id/back_button"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="8dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/arrow_back_icon" />
+
+            <TextView
+                android:id="@+id/restaurantName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:visibility="visible"
+                android:layout_toRightOf="@id/back_button"
+                android:fontFamily="@font/metropolis_medium"
+                android:text="Indian Spice"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:id="@+id/afterSelectedAddressToolbar"
+                android:layout_width="wrap_content"
+                android:layout_toEndOf="@id/back_button"
+                android:layout_toStartOf="@id/showAddress"
+                android:layout_marginEnd="2dp"
+                android:visibility="gone"
+                android:layout_marginStart="10dp"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/restaurantName_selectedAddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/back_button"
+                        android:fontFamily="@font/metropolis_medium"
+                        android:text="Indian Spice"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            android:id="@+id/address_type"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/back_button"
+                            android:layout_gravity="center_vertical"
+                            android:fontFamily="@font/metropolis_medium"
+                            android:textStyle="bold"
+                            android:text="Delivery at Work"
+                            android:textSize="14sp" />
+
+                        <com.google.android.material.divider.MaterialDivider
+                            android:id="@+id/divider"
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="4dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginBottom="2dp" />
+
+                        <TextView
+                            android:id="@+id/user_selected_location"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="4dp"
+                            android:ellipsize="end"
+                            android:singleLine="true"
+                            android:fontFamily="@font/metropolis_medium"
+                            android:text="Our Trainers is best, They Train us very wekk"
+                            android:textSize="12sp" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/showAddress"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_toStartOf="@id/share"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="12dp"
+                android:layout_marginEnd="22dp"
+                android:visibility="gone"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/arrow_down_icon"
+                android:backgroundTint="@color/black"
+                android:scaleType="fitXY" />
+
+            <ImageView
+                android:id="@+id/share"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="18dp"
+                android:background="@drawable/share_icon"
+                android:visibility="visible" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/discount_layout"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_below="@id/toolbar"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="18dp"
+        app:cardBackgroundColor="#DBE7FF"
+        app:cardCornerRadius="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:id="@+id/emoji_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="18dp"
+                android:scaleType="fitXY" />
+
+
+
+            <TextView
+                android:id="@+id/discountText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/metropolis_bold"
+                android:text="You saved 37 on this order"
+                android:textColor="#2D6CD8"
+                android:textSize="16sp" />
+
+
+        </LinearLayout>
+
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/discount_layout"
+        android:layout_above="@id/bottom_layout"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="18dp"
+                app:cardCornerRadius="16dp">
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/cartFoodRecyclerView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <RelativeLayout
+                        android:id="@+id/add_items"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/cartFoodRecyclerView"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="12dp"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/add_icon"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="10dp"
+                            android:background="@drawable/add_icon"
+                            android:backgroundTint="@color/colorPrimary" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="2dp"
+                            android:layout_toEndOf="@id/add_icon"
+                            android:text="Add items"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="16sp" />
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:id="@+id/dotted_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:layout_below="@id/add_items"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:layout_marginBottom="6dp"
+                        android:layerType="software"
+                        android:src="@drawable/dotted_line" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/blinket_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/add_location_card"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="12dp"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/offer_autoapplied"
+                        android:layout_width="match_parent"
+                        android:layout_height="62dp">
+
+                        <ImageView
+                            android:id="@+id/blinkit_icon"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="14dp"
+                            android:background="@drawable/percent_tag_icon"
+                            android:scaleType="fitXY" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="12dp"
+                            android:layout_toEndOf="@id/blinkit_icon"
+                            android:layout_toRightOf="@id/blinkit_icon"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/text8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/metropolis_medium"
+                                android:textColor="#2D3241"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/text11"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:fontFamily="@font/metropolis_medium"
+                                android:text="Auto-applied as your order is above 199"
+                                android:textColor="#68686F"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:id="@+id/dotted_line2"
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:layout_below="@id/add_items"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="12dp"
+                        android:layerType="software"
+                        android:src="@drawable/dotted_line" />
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:id="@+id/applyCouponLayout"
+                        android:layout_height="62dp"
+                        android:layout_marginBottom="4dp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/applyCoupons"
+                            android:layout_width="76dp"
+                            android:layout_height="30dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="bottom"
+                            android:layout_marginEnd="14dp"
+                            android:visibility="visible"
+                            app:cardBackgroundColor="#FFF5F6"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="1dp"
+                            app:strokeColor="@color/colorPrimary"
+                            app:strokeWidth="0.8dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/metropolis_bold"
+                                android:text="APPLY"
+                                android:textColor="@color/colorPrimary2"
+                                android:textSize="12sp" />
+
+
+                        </com.google.android.material.card.MaterialCardView>
+
+
+                        <TextView
+                            android:id="@+id/remove_apply_coupons"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:visibility="gone"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="16dp"
+                            android:layout_centerVertical="true"
+                            android:fontFamily="@font/metropolis_medium"
+                            android:text="Remove"
+                            android:textColor="@color/colorPrimary2" />
+
+                        <ImageView
+                            android:id="@+id/coupon_icon"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="14dp"
+                            android:background="@drawable/percent_tag_icon"
+                            android:scaleType="fitXY" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="12dp"
+                            android:layout_toEndOf="@id/coupon_icon"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/coupons_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/metropolis_medium"
+                                android:text="Save ₹62 with 'CRAVE20"
+                                android:textColor="#2D3241"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/view_all_coupen"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:drawableEnd="@drawable/next_icon"
+                                android:drawableTint="@color/colorPrimary"
+                                android:fontFamily="@font/metropolis_medium"
+                                android:gravity="center_vertical"
+                                android:text="View all coupens"
+                                android:textColor="#68686F"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="12dp"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/delivery_time_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp">
+
+                        <ImageView
+                            android:id="@+id/clock"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="14dp"
+                            android:padding="6dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/stop_watch_icon" />
+
+
+                        <TextView
+                            android:id="@+id/delivery_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="12dp"
+                            android:layout_toEndOf="@id/clock"
+                            android:fontFamily="@font/metropolis_medium"
+                            android:text="Delivery in 20 mins"
+                            android:textColor="#191919"
+                            android:textSize="15sp" />
+
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="32dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="18dp"
+                            android:background="@drawable/next_icon"
+                            android:backgroundTint="#7C7C85" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="12dp"
+                            android:background="@drawable/dotted_line" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/delivery_location"
+                        android:layout_width="match_parent"
+                        android:layout_marginBottom="2dp"
+                        android:visibility="gone"
+                        android:layout_marginTop="6dp"
+                        android:layout_height="wrap_content">
+
+
+                        <RelativeLayout
+                            android:id="@+id/address_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/location_icon"
+                                android:layout_marginStart="14dp"
+                                android:layout_marginTop="6dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:background="@drawable/home_icon"
+                                    android:backgroundTint="@color/black"
+                                    android:scaleType="fitXY" />
+
+                            </LinearLayout>
+
+
+
+                            <LinearLayout
+                                android:id="@+id/text_layout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_toEndOf="@id/location_icon"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/PlaceName"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/metropolis_medium"
+                                    android:text="Delivery at Home"
+                                    android:layout_marginTop="6dp"
+                                    android:textColor="#2D3241"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/location"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_marginEnd="54dp"
+                                    android:ellipsize="end"
+                                    android:fontFamily="@font/metropolis_medium"
+                                    android:maxLines="2"
+                                    android:text="B 89, Block B, Ashok Nagar Extension,New Ashok Nagar"
+                                    android:textColor="#68686F"
+                                    android:textSize="13sp" />
+
+                            </LinearLayout>
+
+
+                        </RelativeLayout>
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="32dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="18dp"
+                            android:background="@drawable/next_icon"
+                            android:backgroundTint="#7C7C85" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_below="@id/address_layout"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="12dp"
+                            android:background="@drawable/dotted_line" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/user_details_card"
+                        android:layout_width="match_parent"
+                        android:visibility="gone"
+                        android:layout_height="54dp">
+
+                        <ImageView
+                            android:id="@+id/phone_icon"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="14dp"
+                            android:padding="6dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/phone_icon" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_centerVertical="true"
+                            android:layout_toEndOf="@id/phone_icon"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/userName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/metropolis_medium"
+                                android:textColor="#191919"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/userNumber"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:fontFamily="@font/metropolis_bold"
+                                android:textColor="#191919" />
+
+
+                        </LinearLayout>
+
+
+
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="32dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="18dp"
+                            android:background="@drawable/next_icon"
+                            android:backgroundTint="#7C7C85" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="12dp"
+                            android:background="@drawable/dotted_line" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+
+                        android:id="@+id/your_order"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp">
+
+                        <ImageView
+                            android:id="@+id/icon7"
+                            android:layout_width="30dp"
+                            android:layout_height="32dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="14dp"
+                            android:padding="6dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/list_icon" />
+
+                        <LinearLayout
+                            android:id="@+id/total_bill_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="56dp"
+                            android:layout_toEndOf="@id/icon7"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+
+                                android:layout_toEndOf="@id/icon7"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/total_bill"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="12dp"
+                                    android:fontFamily="@font/metropolis_medium"
+                                    android:text="Total bill ₹387- ₹350"
+                                    android:textColor="#191919"
+                                    android:textSize="12sp" />
+
+
+                                <TextView
+                                    android:id="@+id/you_saved_text"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_toEndOf="@id/total_bill"
+                                    android:background="#D4F3DD"
+                                    android:fontFamily="@font/metropolis_medium"
+                                    android:paddingStart="6dp"
+                                    android:paddingEnd="6dp"
+                                    android:text="You saved ₹37"
+                                    android:textColor="#5DA17D"
+                                    android:textSize="10sp" />
+
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/texs"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/total_bill_layout"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_toEndOf="@id/icon7"
+                                android:fontFamily="@font/metropolis_medium"
+                                android:text="Incl, taxes, charges &amp; donation"
+                                android:textColor="#191919"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+
+                        <ImageView
+                            android:id="@+id/next_icon4"
+                            android:layout_width="30dp"
+                            android:layout_height="32dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="18dp"
+                            android:background="@drawable/next_icon"
+                            android:backgroundTint="#7C7C85" />
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="12dp"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="0dp"
+                >
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:id="@+id/skip_user_details_layout"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/yourDetailsText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginStart="18dp"
+                        android:layout_gravity="center_vertical"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/metropolis_medium"
+                        android:text="Your Details"/>
+
+                    <TextView
+                        android:id="@+id/skipUserDetails"
+                        android:layout_width="wrap_content"
+                        android:layout_below="@id/yourDetailsText"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginBottom="12dp"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/metropolis_medium"
+                        android:text="Name,Number" />
+
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="32dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="18dp"
+                        android:background="@drawable/next_icon"
+                        android:backgroundTint="#7C7C85" />
+
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="22dp"
+                android:fontFamily="@font/metropolis_medium"
+                android:text="CANCELLATIONS POLICY"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:fontFamily="@font/metropolis_medium"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="128dp"
+                android:text="help us reduce food waste by avoiding cancellations, The amount paid is non-refundable after placeing the order."
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        android:layout_marginBottom="-8dp"
+        android:background="@drawable/top_left_right_rounded_corners"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/skipDeliveryAddress_layout"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/locationIconForSkip"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="14dp"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:background="@drawable/location_icon"
+                    android:scaleType="fitXY" />
+
+
+                <TextView
+                    android:id="@+id/skipDeliveryType"
+                    android:layout_toEndOf="@id/locationIconForSkip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/metropolis_medium"
+                    android:text="Delivery at Work"/>
+
+                <TextView
+                    android:id="@+id/skipAddress"
+                    android:layout_toEndOf="@id/locationIconForSkip"
+                    android:layout_width="wrap_content"
+                    android:layout_below="@id/skipDeliveryType"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/metropolis_medium"
+                    android:text="new,ashok,Nagar" />
+
+
+                <TextView
+                    android:id="@+id/change_Address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="8dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="12dp"
+                    android:text="Change"
+                    android:textColor="@color/colorPrimary" />
+
+
+
+            </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/zomatoMoneyBalance_layout"
+            android:orientation="horizontal">
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_marginStart="-6dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+            <TextView
+                android:layout_toEndOf="@id/checkBox"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-8dp"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/metropolis_medium"
+                android:text="Zomato Money balance: ₹0 | Add money"/>
+
+            <ImageView
+                android:id="@+id/next_icon9"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="end"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/next_icon"
+                android:backgroundTint="#7C7C85" />
+
+
+
+        </RelativeLayout>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+
+            <Button
+                android:id="@+id/selectAddressForOrder"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="match_parent"
+                android:visibility="visible"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/phone_layout"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="26dp"
+                android:drawableEnd="@drawable/next_icon"
+                android:background="@drawable/red_btn_bg"
+                android:fontFamily="@font/metropolis_medium"
+                android:text="Select Address at next step"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                app:backgroundTint="#F04F5F" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                android:id="@+id/bottom_layout2">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <RelativeLayout
+                        android:id="@+id/counter_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:layout_weight=".001"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/total_food_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cash on Delivery"
+                            android:fontFamily="@font/metropolis_medium"
+                            android:layout_centerVertical="true"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/placeOrder"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="4"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="10dp"
+                        android:backgroundTint="@color/colorPrimary"
+                        android:background="@drawable/all_corner_radius_bg"
+                        android:layout_height="60dp">
+
+                        <LinearLayout
+                            android:id="@+id/layout_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="12dp"
+                            android:orientation="vertical">
+
+
+                            <TextView
+                                android:id="@+id/total_food_price_in_button"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="₹387"
+                                android:textAlignment="center"
+                                android:fontFamily="@font/metropolis_bold"
+                                android:layout_centerVertical="true"
+                                android:textColor="@color/white"
+                                android:textSize="16sp" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="TOTAL"
+                                android:textAlignment="center"
+                                android:fontFamily="@font/metropolis_medium"
+                                android:textColor="@color/white"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Place Order"
+                            android:textAlignment="center"
+                            android:layout_marginStart="22dp"
+                            android:layout_marginEnd="12dp"
+                            android:layout_alignParentEnd="true"
+                            android:drawableEnd="@drawable/next_icon"
+                            android:fontFamily="@font/metropolis_medium"
+                            android:layout_centerVertical="true"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
+
+
+
+<!--
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/continue_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_toEndOf="@id/counter_layout"
+                            android:background="@drawable/red_btn_bg"
+                            android:fontFamily="@font/metropolis_medium"
+                            android:text="Continue"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            app:backgroundTint="#F04F5F" />
+-->
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

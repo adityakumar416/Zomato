@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="14dp"
+    android:layout_marginBottom="-18dp"
+    android:background="@color/white"
+    tools:context=".view.cart.bottomsheets.OrderPlaceOrNotBottomSheetFragment">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="22dp"
+        android:fontFamily="@font/metropolis_medium"
+        android:text="Placing your order"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:id="@+id/delivery_payment_layout"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_below="@id/text1"
+        android:layout_marginTop="14dp">
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/icon_card1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_centerVertical="true"
+            android:orientation="vertical"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="8dp">
+
+            <ImageView
+                android:id="@+id/icon1"
+                android:layout_centerVertical="true"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_gravity="center"
+                android:scaleType="fitXY"
+                android:src="@drawable/stop_watch_icon" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/delivery_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="12dp"
+            android:layout_toEndOf="@id/icon_card1"
+            android:fontFamily="@font/metropolis_medium"
+            android:text="Pay ₹219 cash on delivery"
+            android:textColor="#191919" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="12dp"
+            android:layout_toEndOf="@id/icon_card1"
+            android:background="@drawable/dotted_line" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/delivery_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/delivery_payment_layout"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="2dp"
+        android:visibility="visible">
+
+
+        <RelativeLayout
+            android:id="@+id/address_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/location_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="6dp"
+                android:orientation="vertical"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="8dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="6dp"
+                    android:background="@drawable/home_icon"
+                    android:backgroundTint="@color/black"
+                    android:scaleType="fitXY" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <LinearLayout
+                android:id="@+id/text_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_toEndOf="@id/location_icon"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/PlaceName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="@font/metropolis_medium"
+                    android:text="Delivery at Home"
+                    android:textColor="#2D3241"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="54dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/metropolis_medium"
+                    android:maxLines="2"
+                    android:singleLine="true"
+                    android:text="B 89, Block B, Ashok Nagar Extension,New Ashok Nagar"
+                    android:textColor="#68686F"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@id/text_layout"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="12dp"
+                android:layout_toEndOf="@id/location_icon"
+                android:background="@drawable/dotted_line" />
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:layout_marginBottom="40dp"
+            android:layout_below="@id/delivery_location"
+
+            >
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:indeterminate="false"
+                android:layout_marginStart="22dp"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:max="100"
+                android:progress="0"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/close_button"
+                android:layout_width="76dp"
+                android:layout_height="30dp"
+
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="bottom"
+                android:layout_marginEnd="14dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="1dp"
+                app:strokeColor="@color/colorPrimary"
+                app:strokeWidth="0.8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/metropolis_bold"
+                    android:text="Cancel"
+                    android:textColor="@color/colorPrimary2"
+                    android:textSize="12sp" />
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

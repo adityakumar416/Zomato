@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:fillViewport="true"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/top_image"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/zomato_gold_image" />
+
+            <ImageView
+                android:id="@+id/back_button"
+                android:layout_width="24dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginStart="8dp"
+                android:backgroundTint="@color/white"
+                android:background="@drawable/back_arrow_icon" />
+
+            <ImageView
+                android:id="@+id/join_gold"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:layout_below="@id/top_image"
+                android:scaleType="fitXY"
+                android:src="@drawable/zomato_gold_image2" />
+
+            <ImageView
+                android:id="@+id/zomato_benifits"
+                android:layout_width="match_parent"
+                android:layout_height="570dp"
+                android:layout_below="@id/join_gold"
+                android:scaleType="fitXY"
+                android:src="@drawable/zomato_gold_image3" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@id/zomato_benifits"
+                android:scaleType="fitXY"
+                android:src="@drawable/zomato_join_gold_button" />
+
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:id="@+id/blinket_card"
+    android:layout_marginStart="12dp"
+    app:cardElevation="0dp"
+    android:layout_marginEnd="12dp"
+    app:cardCornerRadius="2dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/blinkit_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/location_icon"
+            android:backgroundTint="@color/black"
+            android:scaleType="fitXY" />
+
+        <LinearLayout
+            android:id="@+id/text_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="12dp"
+            android:layout_toEndOf="@id/blinkit_icon"
+            android:layout_toRightOf="@id/blinkit_icon"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/PlaceName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/metropolis_medium"
+                android:text="Agarwal Sweets"
+                android:textColor="#2D3241"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="54dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/metropolis_medium"
+                android:maxLines="2"
+                android:text="B 89, Block B, Ashok Nagar Extension,New Ashok Nagar"
+                android:textColor="#68686F"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_gravity="bottom"
+        android:layout_marginTop="22dp"
+        />
+
+</androidx.cardview.widget.CardView>
+
+

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#EF0C4C" /> <!-- Color of the tab indicator -->
+    <size android:height="4dp" />  <!-- Height of the tab indicator -->
+    <corners android:radius="2dp" /> <!-- Optional: Rounded corners for the indicator -->
+</shape>
